@@ -5,6 +5,8 @@ services:
 before_install:
  - docker build -t ybsgit/react-test -f ./client/Dockerfile.dev ./client
 
+script:
+ - docker run ybsgit/react-test 
 
 after_success:
  - docker build -t ybsgit/multi-client ./client
