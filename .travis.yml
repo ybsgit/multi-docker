@@ -3,21 +3,21 @@ services:
  - docker
 
 before_install:
- - docker build -t ybsgit/react-test -f ./client/Dockerfile.dev ./client
+ - docker build -t yograj/react-test -f ./client/Dockerfile.dev ./client
 
 script:
- - echo "Hi" 
+ - echo "Hi"
 
 after_success:
- - docker build -t ybsgit/multi-client ./client
- - docker build -t ybsgit/multi-nginx ./nginx 
- - docker build -t ybsgit/multi-server ./server
- - docker build -t ybsgit/multi-worker ./worker
+ - docker build -t yograj/multi-client ./client
+ - docker build -t yograj/multi-nginx ./nginx
+ - docker build -t yograj/multi-server ./server
+ - docker build -t yograj/multi-worker ./worker
 
  - echo "$dockerpass" | docker login -u "$dockerid" --password-stdin
 
- - docker push ybsgit/multi-client
- - docker push ybsgit/multi-nginx
- - docker push ybsgit/multi-server 
- - docker push ybsgit/multi-worker 
- 
+ - docker push yograj/multi-client
+ - docker push yograj/multi-nginx
+ - docker push yograj/multi-server
+ - docker push yograj/multi-worker
+
